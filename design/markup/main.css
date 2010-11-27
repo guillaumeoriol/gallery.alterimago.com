@@ -1,0 +1,286 @@
+@CHARSET "UTF-8";
+
+/*
+ * File         main.css
+ * Company      Alter Imago
+ * Author       Guillaume ORIOL
+ * Created on   2010-11-21
+ * Description  Main stylesheet: defaults, layout and colors
+ * =============================================================================
+ * Defaults
+ * No default margin, nor padding 
+ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Switch to block mode to avoid the space below... */
+img {
+    display: block;
+    border-style: none;
+}
+
+/* ...but keep an explicit inline image for specific situations */
+img.inline {
+    display: inline;
+}
+
+/* Internet Explorer PNG fix for versions 5.5 and 6.0 */
+img,div {
+    behavior: url("/style/iepngfix.htc");
+}
+
+/*
+ * Too many issues with this element. 
+ * Kept only for structuring code, not for display purpose.
+ */
+hr {
+    display: none;
+}
+
+/* Replace the underline by a border for more accurate placement */
+a {
+    text-decoration: none;
+    border-style: 1px solid blue;
+}
+
+a:hover,a:focus {
+    text-decoration: none;
+    border-style: none;
+}
+
+/*
+ * When no href is provided, the browser doesn't consider it clickable.
+ * Thus, the cursor is the default arrow. When some Javascript replaces
+ * the href, we need to add the js class to display the pointer properly.
+ */
+a.js {
+    cursor: pointer;
+}
+
+/* Automatically add scroll bars when needed */
+pre {
+    overflow: auto;
+}
+
+/*
+ * Page layout
+ * -----------------------------------------------------------------------------
+ * Set payload width (depending on most popular screen definition).
+ * According to www.w3counter.com, 1024x768 is #1 screen resolution in aug 2010.
+ * According to FoldSpy, you can be sure that your visitors will be able to see
+ * the content placed within the 500px-800px screen height.
+ * Also centers the content horizontally in the viewport.
+ * "text-align: left;" would be needed for IE 5.5 (known bug).
+ *
+ * module size: 60px (padding-left: 10 + width: 40 + padding-right: 10)
+ * 15 modules x 60px = 900px
+ */
+#bodyWrapper,#headerWrapper,#footerWrapper {
+    width: 900px; /* + 30px (padding left) + 30px (padding right) = 960px */
+    padding: 20px 0px;
+    margin: 0 auto; /* The proper way to center pane */
+    overflow: hidden;/*
+    background: transparent url("image/grid.png");
+*/}
+
+.grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7,.grid_8,
+.grid_9,.grid_10,.grid_11,.grid_12,.grid_13,.grid_14,.grid_15 {
+    display: inline;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.gridFirst {
+    margin-left: 0
+}
+
+.gridLast {
+    margin-right: 0
+}
+
+.grid_1 {
+    width: 40px
+}
+
+.grid_2 {
+    width: 100px
+}
+
+.grid_3 {
+    width: 160px
+}
+
+.grid_4 {
+    width: 220px
+}
+
+.grid_5 {
+    width: 280px
+}
+
+.grid_6 {
+    width: 340px
+}
+
+.grid_7 {
+    width: 400px
+}
+
+.grid_8 {
+    width: 460px
+}
+
+.grid_9 {
+    width: 520px
+}
+
+.grid_10 {
+    width: 580px
+}
+
+.grid_11 {
+    width: 640px
+}
+
+.grid_12 {
+    width: 700px
+}
+
+.grid_13 {
+    width: 760px
+}
+
+.grid_14 {
+    width: 820px
+}
+
+.prefix_1 {
+    padding-left: 60px;
+}
+
+/*
+ * This position property is set to relative in order to use an absolute
+ * position relative to this container for the messageWrapper
+ */
+#bodyWrapper {
+    position: relative;
+    min-height: 300px;
+}
+
+#headerWrapper {
+    padding-top: 30px;
+    padding-bottom: 11px;
+}
+
+#headerRuler {
+    width: 100%;
+    border-top: 1px solid #9d9d9d;
+}
+
+#navigation {
+    padding-top: 15px;
+}
+
+#sidebarHeader {
+    height: 40px;
+    padding: 12px 10px 8px 10px;
+    background: transparent url("image/sidebar-hatching.png");
+}
+
+#sidebarContent {
+    padding: 10px;
+}
+
+#sidebarContent li {
+    margin-bottom: 0.4em;
+    list-style-type: none;
+}
+
+/*
+ * Typefaces
+ * -----------------------------------------------------------------------------
+ * Regular text font
+ */
+body {
+    font-family: "Inconsolata", Arial, monospace;
+    /*
+     * "100%" means 100% of the parent object font size. Speaking about body,
+     * it refers to the browser's defined font size (user preferences).
+     * Use 100.1% to avoid an Opera bug up to release 6.
+     */
+    font-size: 100%;
+}
+
+#headerWrapper {
+    font-size: 120%;
+}
+
+#sidebarHeader {
+    font-size: 140%;
+}
+
+#sidebarContent {
+    font-size: 100%;
+}
+
+#footerWrapper {
+    font-size: 12px; /* Fixed size: we don't want it to grow up when zooming */
+}
+
+/**
+ * Heading and footer font
+ */
+h1,h2,h3,h4,h5,h6,#footerWrapper {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 200%;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 140%;
+}
+
+h3 {
+    font-size: 130%;
+}
+
+h4 {
+    font-size: 120%;
+}
+
+#content p {
+    font-size: 80%
+}
+    
+/*
+ * Background colors
+ * -----------------------------------------------------------------------------
+ * Page background 
+ */
+body {
+    background-color: #505050;
+}
+
+#bodyWrapper,#headerWrapper,#footerWrapper {
+    background-color: #404040;
+}
+
+/*
+ * Foreground colors
+ * -----------------------------------------------------------------------------
+ * Page foreground
+ */
+#bodyWrapper {
+    color: #ffffff;
+}
+
+#headerWrapper,#sidebarContent {
+    color: #b5b5b5;
+}
