@@ -6,6 +6,8 @@
 <title>La Galerie - Cabourg</title>
 <style type="text/css">
 <!--
+    @import "reset.css";
+    @import "960.css";
     @import "main.css";
     @import "http://fonts.googleapis.com/css?family=Inconsolata&subset=latin";
 -->
@@ -14,16 +16,11 @@
 
 <body>
   <!-- displayedHeader -->
-  <div id="headerWrapper">
+  <div id="headerWrapper" class="container_16">
     <div id="logo" class="grid_4"><img src="image/AIG-logo-220x41.png" alt="La Galerie Alter imago de Cabourg"/></div>
-    <!--  div id="navigation" class="grid_10 prefix_1">ARTISTES <img src="image/nav-separator.png" alt="" class="navigationSeparator inline"/>
-    AGENDA EXPOS <img src="image/nav-separator.png" alt="" class="navigationSeparator inline"/>
-    SERVICES <img src="image/nav-separator.png" alt="" class="navigationSeparator inline"/>
-    À PROPOS <img src="image/nav-separator.png" alt="" class="navigationSeparator inline"/>
-    CONTACT</div -->
-    <div id="navigation" class="grid_10 prefix_1">
+    <div id="navigation" class="grid_11 prefix_1">
       <ul>
-        <li class="first selected"><span>ARTISTES</span></li><li
+        <li class="alpha selected"><span>ARTISTES</span></li><li
         ><span>AGENDA</span></li><li
         ><span>SERVICES</span></li><li
         ><span>À PROPOS</span></li><li
@@ -35,22 +32,24 @@
   <div id="headerRuler"></div>
 
   <!-- displayedBody -->
-  <div id="bodyWrapper">
-    <div id="sidebar" class="grid_4">
-      <div id="sidebarHeader"><h2>ARTISTES</h2></div>
-      <ul id="sidebarContent">
-        <li>ALBENA</li>
-        <li>Marie-Paule BENOIT-BASSET</li>
-        <li>Benoît HAVARD</li>
-        <li class="selected">Hervé LOILIER</li>
-        <li>Nadine LECOMTE</li>
-      </ul>
+  <div id="bodyWrapper" class="container_16">
+    <div id="artists" class="grid_4 sideBarLeft">
+      <div class="ruler">
+        <h2>ARTISTES</h2>
+        <ul>
+          <li>ALBENA</li>
+          <li>Marie-Paule BENOIT-BASSET</li>
+          <li>Benoît HAVARD</li>
+          <li class="selected">Hervé LOILIER</li>
+          <li>Nadine LECOMTE</li>
+        </ul>
+      </div>
     </div>
     
     <div id="content">
-      <div id="biography" class="prefix_1 grid_6">
+      <div id="biography" class="prefix_1 grid_7">
         <h1>Biographie</h1>
-        <p>Diplômé de l’École polytechnique et de l’École natio- nale supérieure des 
+        <p>Diplômé de l’École polytechnique et de l’École nationale supérieure des 
         arts décoratifs, Hervé Loilier a été l'élève de Lucien Fontanarosa. Il est 
         professeur d'arts plastiques à l'École polytechnique depuis 1973 et 
         poursuit son œuvre picturale en parallèle.</p>
@@ -61,12 +60,14 @@
       <div class="prefix_1 grid_3">
         <img src="image/LLRH.png" alt="Hervé Loilier"/>
         <div class="sideBarRight">
-          <h3>PLUS D'INFO</h3>
-	      <ul>
-	        <li>Biographie de l'artiste</li>
-	        <li>Demande d'information</li>
-	        <li>Newsletter</li>
-	      </ul>
+          <div class="ruler">
+            <h3>PLUS D'INFO</h3>
+	        <ul>
+	          <li>Biographie de l'artiste</li>
+	          <li>Demande d'information</li>
+	          <li>Newsletter</li>
+	        </ul>
+	      </div>
         </div>
       </div>
     </div>
@@ -74,8 +75,7 @@
   <!-- /displayedBody -->
 
   <!-- displayedFooter -->
-  <div id="footerWrapper">
-  </div>
+  <div id="footerWrapper" class="container_16"></div>
   <!-- /displayedFooter -->
 </body>
 </html>

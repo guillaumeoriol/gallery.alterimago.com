@@ -5,67 +5,10 @@
  * Company      Alter Imago
  * Author       Guillaume ORIOL
  * Created on   2010-11-21
- * Description  Main stylesheet: defaults, layout and colors
- * =============================================================================
- * Defaults
- * No default margin, nor padding 
+ * Description  Main stylesheet: layout, font and colors
  */
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/* Switch to block mode to avoid the space below... */
-img {
-    display: block;
-    border: none;
-}
-
-/* ...but keep an explicit inline image for specific situations */
-img.inline {
-    display: inline;
-}
-
-/* Internet Explorer PNG fix for versions 5.5 and 6.0 */
-img,div {
-    behavior: url("/style/iepngfix.htc");
-}
-
-/*
- * Too many issues with this element. 
- * Kept only for structuring code, not for display purpose.
- */
-hr {
-    display: none;
-}
-
-/* Replace the underline by a border for more accurate placement */
-a {
-    text-decoration: none;
-    border-style: 1px solid blue;
-}
-
-a:hover,a:focus {
-    text-decoration: none;
-    border-style: none;
-}
-
-/*
- * When no href is provided, the browser doesn't consider it clickable.
- * Thus, the cursor is the default arrow. When some Javascript replaces
- * the href, we need to add the js class to display the pointer properly.
- */
-a.js {
-    cursor: pointer;
-}
-
-/* Automatically add scroll bars when needed */
-pre {
-    overflow: auto;
-}
-
-/*
- * Page layout
+ 
+/* Page layout
  * -----------------------------------------------------------------------------
  * Set payload width (depending on most popular screen definition).
  * According to www.w3counter.com, 1024x768 is #1 screen resolution in aug 2010.
@@ -73,122 +16,31 @@ pre {
  * the content placed within the 500px-800px screen height.
  * Also centers the content horizontally in the viewport.
  * "text-align: left;" would be needed for IE 5.5 (known bug).
- *
- * module size: 60px (padding-left: 10 + width: 40 + padding-right: 10)
- * 15 modules x 60px = 900px
  */
-#bodyWrapper,#headerWrapper,#footerWrapper {
-    width: 900px; /* + 30px (padding left) + 30px (padding right) = 960px */
-    padding: 20px 0px;
-    margin: 0 auto; /* The proper way to center pane */
-    overflow: hidden;
-    background: transparent url("image/grid.png");
-}
-
-.grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7,.grid_8,.grid_9,.grid_10,.grid_11,.grid_12,.grid_13,.grid_14,.grid_15
-    {
-    display: inline;
-    float: left;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.gridFirst {
-    margin-left: 0
-}
-
-.gridLast {
-    margin-right: 0
-}
-
-.grid_1 {
-    width: 40px
-}
-
-.grid_2 {
-    width: 100px
-}
-
-.grid_3 {
-    width: 160px
-}
-
-.grid_4 {
-    width: 220px
-}
-
-.grid_5 {
-    width: 280px
-}
-
-.grid_6 {
-    width: 340px
-}
-
-.grid_7 {
-    width: 400px
-}
-
-.grid_8 {
-    width: 460px
-}
-
-.grid_9 {
-    width: 520px
-}
-
-.grid_10 {
-    width: 580px
-}
-
-.grid_11 {
-    width: 640px
-}
-
-.grid_12 {
-    width: 700px
-}
-
-.grid_13 {
-    width: 760px
-}
-
-.grid_14 {
-    width: 820px
-}
-
-.prefix_1 {
-    padding-left: 60px;
+#bodyWrapper,#headerWrapper,#footerWrapper { /*    
+/*  background: transparent url("image/960-grid-16-cols.png"); */
 }
 
 /*
- * This position property is set to relative in order to use an absolute
+ * The position property is set to relative in order to use an absolute
  * position relative to this container for the messageWrapper
  */
 #bodyWrapper {
-    position: relative;
+    margin-top: 20px; position : relative;
     min-height: 300px;
+    position: relative;
 }
 
 #headerWrapper {
-    padding-top: 30px;
-    padding-bottom: 11px;
+    margin-top: 30px;
+    margin-bottom: 11px;
 }
 
-#headerRuler {
-    width: 100%;
-    border-top: 1px solid #9d9d9d;
-}
-
-/* Navigation 
- * -----------------------------------------------------------------------------
+/* 
+ * Navigation 
  */
 #navigation {
     line-height: 41px; /* Adjust to logo's height */
-}
-
-#navigation ul {
-    list-style-type: none;
 }
 
 #navigation li {
@@ -199,7 +51,7 @@ pre {
     background-position: left center;
 }
 
-#navigation li.first {
+#navigation li.alpha {
     padding-left: 0;
     background: none;
 }
@@ -216,29 +68,25 @@ pre {
     background-image: url("image/bullet-red.png");
 }
 
-/* Left side bar 
- * -----------------------------------------------------------------------------
+/*
+ * Left side bar 
  */
-#sidebarHeader {
+.sideBarLeft h2 {
     height: 40px;
-    padding: 12px 10px 8px 10px;
+    padding: 16px 10px 4px 10px;
     background: transparent url("image/sidebar-header-hatching.png");
 }
 
-#sidebarContent {
-    padding: 10px;
+.sideBarLeft ul {
+    padding: 10px 0 10px 10px;
     background-image: url("image/sidebar-content-hatching.png");
     background-repeat: repeat-y;
 }
 
-#sidebarContent li {
+.sideBarLeft li {
     margin-bottom: 0.4em;
-    list-style-type: none;
 }
 
- {
-    }
-    
 /* Right side bar
  * -----------------------------------------------------------------------------
  */
@@ -274,6 +122,7 @@ p {
 
 a.inline {
     padding: 0 0.2em;
+    text-decoration: none;
 }
 
 /*
@@ -295,14 +144,6 @@ body {
     font-size: 120%;
 }
 
-#sidebarHeader {
-    font-size: 140%;
-}
-
-#sidebarContent {
-    font-size: 100%;
-}
-
 #footerWrapper {
     font-size: 12px; /* Fixed size: we don't want it to grow up when zooming */
 }
@@ -321,7 +162,7 @@ h1 {
 }
 
 h2 {
-    font-size: 140%;
+    font-size: 180%;
 }
 
 h3 {
@@ -343,7 +184,7 @@ h4 {
  * Page background 
  */
 body {
-    background-color: #505050;
+    background-color: #404040;
 }
 
 #bodyWrapper,#headerWrapper,#footerWrapper {
@@ -359,18 +200,26 @@ a.inline {
  * -----------------------------------------------------------------------------
  * Page foreground
  */
-#bodyWrapper,#navigation .selected {
+#bodyWrapper,#navigation .selected,.sideBarLeft h2 {
     color: #ffffff;
 }
 
-#navigation,#sidebarContent {
+#navigation,.sideBarLeft li {
     color: #b5b5b5;
 }
 
-#sidebar li.selected {
+.sideBarLeft li.selected {
     color: #ce1932;
 }
 
 a.inline {
     color: #7c7c7c;
+}
+
+#headerRuler {
+    border: 1px solid #9d9d9d;
+}
+
+.sideBarLeft .ruler,.sideBarRight .ruler {
+    border: 1px solid #505050;
 }
